@@ -15,9 +15,9 @@ cipherText = ""
 for i in range(len(plainText)):
     ch = plainText[i]
     if ch.isalpha():
-        ch = chr((ord(ch)%32 + keyVals[i%6] - 1)%26 + (ord(ch)//32)*32 + 1)
+        ch = chr((ord(ch)%32 + keyVals[i%n] - 1)%26 + (ord(ch)//32)*32 + 1)
     elif ch.isnumeric():
-        ch = chr((ord(ch) +keyVals[i%6] - 48)%10 + 48)
+        ch = chr((ord(ch) +keyVals[i%n] - 48)%10 + 48)
     cipherText += ch
 
-print("The cipherText is:",cipherText)
+print("The cipherText is:", cipherText)
